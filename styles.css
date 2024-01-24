@@ -1,0 +1,10 @@
+body {
+    display: flex;
+    height: 95vh; /* Ensure the body takes up the full viewport height */
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+h1 {
+    color: black;
+}
