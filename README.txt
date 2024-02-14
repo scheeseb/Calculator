@@ -1,2 +1,2 @@
 Version 0.0.1
-A calculator created for the sole purpose of completing an Odin assignment. It also functions as a calcalator
+A game of Rock Paper Scissors created for the sole purpose of completing an Odin assignment.
