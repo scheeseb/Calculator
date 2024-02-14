@@ -3,3 +3,51 @@
 *::after {
     box-sizing: border-box;
 }
+body {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    
+}
+div {
+    display: flex;
+}
+h1 {
+    font-size: 80px;
+    color: purple;
+}
+.container {
+    width: 100vw;
+    max-width: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+.scoreboard {
+    flex-direction: column;
+    background-color: gray;
+}
+.roundContainer {
+    flex-direction: row;
+     justify-content: center;
+}
+.scoreContainer {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0;
+}
+.score {
+    margin: 20 10;
+}
+.button {
+    width: 20vw;
+    height: 10vh;
+
+
+}
+.buttonContainer {
+    flex-direction: column;
+}
+.gameContainer {
+    justify-content: space-around;
+    align-items: center;
+}
