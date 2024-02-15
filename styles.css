@@ -7,6 +7,10 @@ body {
     display: flex;
     justify-content: center;
     margin: 0;
+    width: 100vw;
+    height: 100vh;;
+    max-width: 100%;
+    flex-direction: column;
     
 }
 div {
@@ -16,19 +20,15 @@ h1 {
     font-size: 80px;
     color: purple;
 }
-.container {
-    width: 100vw;
-    max-width: 100%;
-    justify-content: center;
-    flex-direction: column;
-}
 .scoreboard {
     flex-direction: column;
     background-color: gray;
 }
 .roundContainer {
     flex-direction: row;
-     justify-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
 }
 .scoreContainer {
     flex-direction: row;
@@ -41,8 +41,6 @@ h1 {
 .button {
     width: 20vw;
     height: 10vh;
-
-
 }
 .buttonContainer {
     flex-direction: column;
@@ -50,4 +48,5 @@ h1 {
 .gameContainer {
     justify-content: space-around;
     align-items: center;
+    height: 90vh;
 }
