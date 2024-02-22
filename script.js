@@ -10,22 +10,37 @@ let playerScore = 0;
 let computerScore = 0;
 let roundCount = 0;
 
-    rockButton.addEventListener('click', function(){
-        findWinner(computerChoice(), "rock");
-    })
-    paperButton.addEventListener('click', function(){
-        findWinner(computerChoice(), "paper");
-    })
-    scissorButton.addEventListener('click', function(){
-        findWinner(computerChoice(), "scissor");
-    })
-
+        rockButton.addEventListener('click', function(){
+            if(roundCount < 5){
+                findWinner(computerChoice(), "rock");
+            }else{
+                announceWinner()
+            }
+        })
+        paperButton.addEventListener('click', function(){
+            if(roundCount < 5){
+                findWinner(computerChoice(), "paper");
+            }else{
+                announceWinner()
+            }
+        })
+        scissorButton.addEventListener('click', function(){
+            if(roundCount < 5){
+                findWinner(computerChoice(), "scissor");
+            }else{
+                announceWinner()
+            }        })
 
 function printScore(){
     playerScoreDisplay.textContent = playerScore;
     computerScoreDisplay.textContent = computerScore;
     roundCountDisplay.textContent = roundCount;
 
+}
+function announceWinner(){
+    if(playerScore > computerScore){
+        alert("You Win!")
+    }else("Loser!")
 }
 
 function computerChoice() {
@@ -85,5 +100,5 @@ function findWinner(comChoice, userIn) {
     }
     alert(winStatus)
     printScore()
-    return winStatus
+    // return winStatus
 }
