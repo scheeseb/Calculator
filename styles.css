@@ -1,10 +1,52 @@
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+}
 body {
     display: flex;
-    height: 95vh; /* Ensure the body takes up the full viewport height */
     justify-content: center;
-    align-items: center;
-    background-color: bisque;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;;
+    max-width: 100%;
+    flex-direction: column;
+    
+}
+div {
+    display: flex;
 }
 h1 {
-    color: black;
+    font-size: 80px;
+    color: purple;
+}
+.scoreboard {
+    flex-direction: column;
+    background-color: gray;
+}
+.roundContainer {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+.scoreContainer {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0;
+}
+.score {
+    margin: 20 10;
+}
+.button {
+    width: 20vw;
+    height: 10vh;
+}
+.buttonContainer {
+    flex-direction: column;
+}
+.gameContainer {
+    justify-content: space-around;
+    align-items: center;
+    height: 90vh;
 }

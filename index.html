@@ -3,12 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Calculator</title>
 </head>
 <body>
-    <h1>All the action is in the console anyways</h1>
-
+        <div class="scoreboard">
+            <div class="roundContainer">
+                <h2>Round:</h2>
+                <h2 id="roundCount">0</h2>
+            </div>
+            <div class="scoreContainer">
+                <div class="score">
+                    <h3>You: </h3>
+                    <h3 id="playerScore">0</h3>
+                </div>
+                <div class="score">
+                    <h3>AI: </h3>
+                    <h3 id="computerScore">0</h3>
+                </div>
+            </div>
+        </div>
+        <div class="gameContainer">
+            <div class="buttonContainer">
+                <button id= "rockButton"class="button">Rock</button>
+                <button id="paperButton" class="button">Paper</button>
+                <button id="scissorButton" class="button">Scissors</button>
+            </div>
+            <h1>VS.</h1>
+            <div class="buttonContainer">
+                <h1 class="computerChoice">?</h1>
+            </div>
+        </div>
     <script src="script.js"></script>
 </body>
 </html>

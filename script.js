@@ -1,51 +1,104 @@
-function getComputerChoice() {
-    let random = Math.floor(Math.random() * 3);
-    if(random === 0){return "rock"};
-    if(random === 1){return "paper"};
-    if(random === 2){return "scissors"};
+const rockButton = document.querySelector("#rockButton");
+const paperButton = document.querySelector("#paperButton");
+const scissorButton = document.querySelector("#scissorButton")
+
+const playerScoreDisplay = document.querySelector("#playerScore");
+const computerScoreDisplay = document.querySelector("#computerScore");
+const roundCountDisplay = document.querySelector("#roundCount");
+
+let playerScore = 0;
+let computerScore = 0;
+let roundCount = 0;
+
+        rockButton.addEventListener('click', function(){
+            if(roundCount < 5){
+                findWinner(computerChoice(), "rock");
+            }else{
+                announceWinner()
+            }
+        })
+        paperButton.addEventListener('click', function(){
+            if(roundCount < 5){
+                findWinner(computerChoice(), "paper");
+            }else{
+                announceWinner()
+            }
+        })
+        scissorButton.addEventListener('click', function(){
+            if(roundCount < 5){
+                findWinner(computerChoice(), "scissor");
+            }else{
+                announceWinner()
+            }        })
+
+function printScore(){
+    playerScoreDisplay.textContent = playerScore;
+    computerScoreDisplay.textContent = computerScore;
+    roundCountDisplay.textContent = roundCount;
+
+}
+function announceWinner(){
+    if(playerScore > computerScore){
+        alert("You Win!")
+    }else("Loser!")
 }
 
-function playGame(userRaw, computerChoice){
-    const userChoice = userRaw.toLowerCase();
-    if (userChoice === computerChoice){return "tie"};
-    if (userChoice === "rock"){
-        if(computerChoice === "paper"){
-            return "User Lost"
-        } else {return "User Won"}
-    }
-    if (userChoice === "paper"){
-        if(computerChoice === "scissors"){
-            return "User Lost"
-        } else {return "User Won"}
-    }
-    if (userChoice === "scissors"){
-        if(computerChoice === "rock"){
-            return "User Lost"
-        } else {return "User Won"}
-    }
+function computerChoice() {
+    const pick = Math.floor(Math.random() * 3);
+    if (pick === 1) { return "rock" }
+    else if (pick === 2) { return "paper" }
+    else { return "scissors" }
 }
 
-function fiveRounds() {
-    let userScore = 0;
-    let computerScore = 0
-    for( i=0; i < 5; i++){
-      let userRaw = prompt("Enter Rock, Paper, or Scissors");
-      let computerChoice = getComputerChoice();
-      if (playGame(userRaw, computerChoice) === "User Won"){
-        alert("Winner! " + userRaw + " Over " + computerChoice)
-        userScore++
-      }
-      else if (playGame(userRaw, computerChoice) === "User Lost"){
-        alert("Loser! " + computerChoice + " Over " + userRaw)
-        computerScore++;
-      }
-      else if (playGame(userRaw, computerChoice) === "tie"){
-        alert("Tied");
-        i--
-      }else(alert("Insert Valid Input to repeat round"));
-
-      alert("Computer: " + computerScore + " User:" + userScore)
-
+function findWinner(comChoice, userIn) {
+    let winStatus = ""
+    let userChoice = userIn.toLowerCase();
+    if (comChoice === "rock") {
+        if (comChoice === userChoice) {
+            winStatus = "Tied on " + comChoice;
+        }
+        else if (userChoice === "paper") {
+            winStatus = "Win " + userChoice + " over " + comChoice;
+            playerScore++;
+            roundCount++;
+        }
+        else {
+            winStatus = "Lose " + comChoice + " over " + userChoice;
+            computerScore++;
+            roundCount++;
+        }
     }
+    else if (comChoice === "paper") {
+        if (comChoice === userChoice) {
+            winStatus = "Tied on " + comChoice;
+        }
+        else if (userChoice === "scissors") {
+            winStatus = "Win " + userChoice + " over " + comChoice;
+            playerScore++;
+            roundCount++;
+        }
+        else {
+            winStatus = "Lose " + comChoice + " over " + userChoice;
+            computerScore++;
+            roundCount++;
+        }
+    }
+    else {
+        if (userChoice === comChoice) {
+            winStatus = "Tied on " + comChoice;
+        }
+        else if (userChoice === "rock") {
+            winStatus = "Win " + userChoice + " over " + comChoice;
+            playerScore++;
+            roundCount++;
+        }
+        else {
+            winStatus = "Lose " + comChoice + " over " + userChoice;
+            computerScore++;
+            roundCount++;
+        }
+    }
+    alert(winStatus)
+    printScore()
+    // return winStatus
 }
-fiveRounds();
